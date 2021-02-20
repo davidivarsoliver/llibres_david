@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Dades Llibres{% endblock %}
+{% block body %}
+<h1>Fitxa del llibre</h1>
+
+
+{%if llibre %}
+<ul>
+<li><strong>{{ llibre.titol | upper }}</strong></li>
+<br>
+<li><i>{{ llibre.autor }}</i></li>
+<br>
+<li>{{ llibre.pàgines }} pàgines</li>
+</ul>
+<a href ="{{ path('inici') }}">Torna a l'inici</a>
+<img class="fletxa" src="{{ absolute_url(asset('img/fletxa.png')) }}"/>
+{% else %}
+<p>Llibre no trobat</p>
+<img class="imatge" src="{{ absolute_url(asset('img/lupa.png')) }}"/>
+<a href ="{{ path('inici') }}">Torna a l'inici</a>
+<img class="fletxa" src="{{ absolute_url(asset('img/fletxa.png')) }}"/>
+{% endif %}
+{% endblock %}
