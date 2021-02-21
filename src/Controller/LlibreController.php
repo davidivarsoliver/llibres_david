@@ -5,16 +5,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class LlibreController extends AbstractController
 {
-private $llibres = array(
-    array("isbn" => "A111B3", "titol" => "Harry Potter y el prisionero de Azkaban",
-    "autor" => "J.K. Rowling", "pàgines" => 340),
-    array("isbn" => "B121C4", "titol" => "La prueba del Jedi",
-    "autor" => "David Sherman", "pàgines" => 370),
-    array("isbn" => "Z131X6", "titol" => "Harry Potter y la cámara secreta",
-    "autor" => "J.K. Rowling", "pàgines" => 390),
-    array("isbn" => "G361H7", "titol" => "El resurgir de la Fuerza",
-    "autor" => "Dave Wolverton", "pàgines" => 420),
-    );
+    private $llibres;
+    public function __construct($bdProva)
+    {
+        $this->llibres = $bdProva->get();
+    }
 
 /**
 * @Route("/llibre/{isbn}", name="fitxa_llibre")

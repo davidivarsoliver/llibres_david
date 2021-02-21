@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Llibres{% endblock %}
 {% block body %}
 <h1>Biblioteca Personal David Ivars Oliver</h1>
@@ -7,6 +6,13 @@
 <p>Pàgina d'inici</p>
 <p>Projecte Symfony 2n DAW</p>
 <p>Curs 20/21</p>
+
+{% for llibre in llibres %}
+
+<li><a href="llibre/{{llibre.isbn}}"> {{ llibre.titol }} </a></li>
+<br>
+{% endfor %}
+
 <a href="{{ path('fitxa_llibre', {isbn: 'A111B3'}) }}">
 <img src="{{ absolute_url(asset('img/llibre.png')) }}"/>
 </a>
