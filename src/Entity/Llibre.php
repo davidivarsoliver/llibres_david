@@ -35,7 +35,7 @@ class Llibre
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
-     * @Assert\GreaterThanOrEqual(100, message="No hay libros de menos de 100 paginas...")
+     * @Assert\GreaterThanOrEqual(100, message="La quantitat de pàgines ha de ser major que 100")
      */
     private $pagines;
 

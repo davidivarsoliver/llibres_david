@@ -9,11 +9,13 @@
 
 {% for llibre in llibres %}
 
-<li><a href="llibre/{{llibre.isbn}}"> {{ llibre.titol }} </a></li>
+<li><a href="llibre/{{llibre.isbn}}"> {{ llibre.titol }} </a> 
+<a href="llibre/editar/{{llibre.isbn}}"><img src="{{ absolute_url(asset('img/edit.png')) }}"/></a>
+</li>
+
 <br>
 {% endfor %}
 
-<a href="{{ path('fitxa_llibre', {isbn: 'A111B3'}) }}">
 <img src="{{ absolute_url(asset('img/llibre.png')) }}"/>
-</a>
+
 {% endblock %}
