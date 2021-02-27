@@ -10,7 +10,7 @@
 {% for llibre in llibres %}
 
 <li><a href="llibre/{{llibre.isbn}}"> {{ llibre.titol }} </a> 
-<a href="llibre/editar/{{llibre.isbn}}"><img src="{{ absolute_url(asset('img/edit.png')) }}"/></a>
+<a href="llibre/editar/{{llibre.isbn}}"><img src="{{ absolute_url(asset('img/edit.png')) }}" width="50" height="50"/></a>
 </li>
 
 <br>

@@ -9,8 +9,18 @@
 {% endblock %}
 </head>
 <body>
-<a href="{{ path('inici') }}">Inici</a> 
-<a href="{{ path('nou_llibre') }}">Llibre nou</a> 
+<div>
+<a href="{{ path('inici') }}">Inici</a>
+<a href="{{ path('nou_llibre') }}">Llibre nou</a>
+{% if is_granted('ROLE_USER') %}
+<p>Benvingut/a, {{ app.user.username }}</p>
+<a href ="{{ path('logout') }}">Tancar sessió</a>
+{% endif %}
+
+{% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('usuaris') }}">Gestió d'usuaris</a>
+{% endif %}
+</div>
 {% block body %}{% endblock %}
 {% block javascripts %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

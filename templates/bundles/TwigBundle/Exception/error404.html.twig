@@ -1,0 +1,9 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>No s'ha trobat la pàgina</h1>
+    <h1>Error 404</h1>
+
+    <img src="{{ absolute_url(asset('img/error.jpg')) }}" />
+{% endblock %}
