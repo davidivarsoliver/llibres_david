@@ -168,9 +168,5 @@ $resultat = $repositori->findSomeBySomeField($pagines);
 return $this->render('inici.html.twig', array('llibres' => $resultat));
 }
 
-
-
-
-
-    }
+}
 ?>

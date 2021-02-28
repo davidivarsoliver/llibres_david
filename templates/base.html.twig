@@ -9,16 +9,21 @@
 {% endblock %}
 </head>
 <body>
-<div>
-<a href="{{ path('inici') }}">Inici</a>
-<a href="{{ path('nou_llibre') }}">Llibre nou</a>
-{% if is_granted('ROLE_USER') %}
-<p>Benvingut/a, {{ app.user.username }}</p>
-<a href ="{{ path('logout') }}">Tancar sessió</a>
-{% endif %}
+<div class="nav">
+<a href="{{ path('inici') }}">Inici</a><p>-</p>
+<a href="{{ path('nou_llibre') }}">Llibre nou</a><p>-</p>
+
 
 {% if is_granted('ROLE_ADMIN') %}
-<a href="{{ path('usuaris') }}">Gestió d'usuaris</a>
+<a href="{{ path('admin') }}">Easy Admin</a><p>-</p>
+<a href="{{ path('usuaris') }}">Gestió d'usuaris</a><p>-</p>
+{% endif %}
+
+{% if is_granted('ROLE_USER') %}
+
+<p>Benvingut/a, {{ app.user.username }}</p><p>-</p>
+
+<a href ="{{ path('logout') }}">Tancar sessió</a>
 {% endif %}
 </div>
 {% block body %}{% endblock %}
